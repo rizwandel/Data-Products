@@ -1,0 +1,18 @@
+---
+Author: Mohamed Rizwan
+Date: August 29, 2019
+Output: html_document
+Title: Indian Cities
+output: pdf_document
+---
+
+```{r, echo= TRUE}
+library(leaflet)
+#Cities_India.csv"" contains the longitudes, latitudes of 207 Indian Cities, downloaded from www.simplemaps.com
+
+city_data <- read.csv("Cities_India.csv")
+
+leaflet() %>% addTiles() %>%
+  addCircleMarkers(lat = city_data$lat, lng = city_data$lng, radius = (city_data$population/1000000)*2, weight = 2, popup = city_data$city)
+```
+
