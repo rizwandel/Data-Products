@@ -1,0 +1,14 @@
+title: "MT Cars Plot - Miles Per Gallon Vs Horse Power"
+author: "Mohamed Rizwan"
+date: "August 30, 2019"
+output: html_document
+---
+
+```{r warning=FALSE}
+library(datasets)
+library(ggplot2)
+library(plotly)
+library(dplyr)
+
+plot_ly(type = 'scatter', x = mtcars$hp, y = mtcars$mpg,text = paste("Make:",rownames(mtcars),"<br>cyl:",mtcars$cyl,
+"<br>disp:",mtcars$disp,"<br>qsec:",mtcars$qsec),hoeverinfo = 'text', mode = "markers")
