@@ -14,3 +14,16 @@ city_data <- read.csv("Cities_India.csv")
 leaflet() %>% addTiles() %>%
   addCircleMarkers(lat = city_data$lat, lng = city_data$lng, radius = (city_data$population/1000000)*2, weight = 2, popup = city_data$city)
 ```
+Presentation:
+--- 
+# Leaflet Assignment No.1
+```{r, echo= TRUE}
+library(leaflet)
+library(dplyr)
+#Cities_India.csv"" contains the longitudes, latitudes of 207 Indian Cities, downloaded from www.simplemaps.com
+
+city_data <- read.csv("Cities_India.csv")
+
+leaflet() %>% addTiles() %>%
+  addCircleMarkers(lat = city_data$lat, lng = city_data$lng, radius = (city_data$population/1000000)*2, weight = 2, popup = city_data$city)
+```
